@@ -1,0 +1,149 @@
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+
+\title{\textbf{Étude des performances de la multiplication matricielle parallèle}}
+\author{}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Introduction}
+	
+	La multiplication matricielle est une opération fondamentale en calcul
+	scientifique. Pour réduire son temps d'exécution, plusieurs techniques de
+	parallélisation peuvent être utilisées. Ce travail compare les performances
+	d'une version séquentielle, d'une version OpenMP, d'une version MPI et de
+	deux configurations hybrides MPI/OpenMP.
+	
+	L'objectif est d'évaluer l'accélération obtenue et d'identifier les
+	configurations les plus adaptées aux tailles de matrices étudiées.
+	
+	\section{Environnement et méthodologie}
+	
+	Les expériences ont été réalisées sur une machine équipée d'un processeur
+	Intel Core i5-7300U, comprenant 2 cœurs physiques et 4 processeurs logiques,
+	avec environ 3,7 Gio de mémoire disponible.
+	
+	Quatre tailles de matrices carrées ont été testées :
+	\[
+	N \in \{500,1000,1500,2000\}.
+	\]
+	
+	Les cinq configurations comparées sont :
+	
+	\begin{itemize}
+		\item \textbf{Séquentielle} : 1 processus MPI et 1 thread OpenMP ;
+		\item \textbf{OpenMP} : 1 processus MPI et 4 threads OpenMP ;
+		\item \textbf{MPI} : 4 processus MPI et 1 thread OpenMP ;
+		\item \textbf{Hybride (1$\times$4)} : 1 processus MPI et 4 threads OpenMP ;
+		\item \textbf{Hybride (4$\times$1)} : 4 processus MPI et 1 thread OpenMP.
+	\end{itemize}
+	
+	Cinq essais ont été réalisés pour les tailles 500, 1000 et 2000, et dix
+	essais pour la taille 1500. Les sommes de contrôle obtenues sont identiques
+	pour toutes les configurations d'une même taille, ce qui confirme la
+	cohérence numérique des résultats comparés.
+	
+	\section{Résultats expérimentaux}
+	
+	L'accélération est définie par :
+	\[
+	S=\frac{T_{\mathrm{seq}}}{T_{\mathrm{par}}},
+	\]
+	où $T_{\mathrm{seq}}$ est le temps moyen de calcul séquentiel et
+	$T_{\mathrm{par}}$ celui de la configuration parallèle.
+	
+	L'efficacité est calculée selon :
+	\[
+	E=\frac{S}{p}\times100\%,
+	\]
+	où $p$ représente le produit du nombre de processus MPI par le nombre
+	de threads OpenMP. Pour la référence séquentielle, l'efficacité de 100\%
+	est une convention de présentation.
+	
+	\begin{table}[H]
+		\centering
+		\small
+		\begin{tabular}{llrrr}
+			\toprule
+			$N$ & Configuration & Temps (s) & Accélération & Efficacité (\%) \\
+			\midrule
+			500 & Séquentielle & 0,1590 & 1,000 & 100,00 \\
+			500 & OpenMP & 0,0448 & 3,548 & 88,70 \\
+			500 & MPI & 0,0607 & 2,622 & 65,56 \\
+			500 & Hybride (1$\times$4) & 0,0456 & 3,485 & 87,14 \\
+			500 & Hybride (4$\times$1) & 0,0596 & 2,667 & 66,68 \\
+			\midrule
+			1000 & Séquentielle & 1,3909 & 1,000 & 100,00 \\
+			1000 & OpenMP & 0,4153 & 3,349 & 83,74 \\
+			1000 & MPI & 0,5542 & 2,510 & 62,74 \\
+			1000 & Hybride (1$\times$4) & 0,4038 & 3,444 & 86,11 \\
+			1000 & Hybride (4$\times$1) & 0,5494 & 2,532 & 63,29 \\
+			\midrule
+			1500 & Séquentielle & 4,7705 & 1,000 & 100,00 \\
+			1500 & OpenMP & 1,7408 & 2,740 & 68,51 \\
+			1500 & MPI & 1,9493 & 2,447 & 61,18 \\
+			1500 & Hybride (1$\times$4) & 1,5700 & 3,039 & 75,96 \\
+			1500 & Hybride (4$\times$1) & 1,9311 & 2,470 & 61,76 \\
+			\midrule
+			2000 & Séquentielle & 11,1509 & 1,000 & 100,00 \\
+			2000 & OpenMP & 3,8048 & 2,931 & 73,27 \\
+			2000 & MPI & 4,5809 & 2,434 & 60,86 \\
+			2000 & Hybride (1$\times$4) & 3,9354 & 2,833 & 70,84 \\
+			2000 & Hybride (4$\times$1) & 4,7118 & 2,367 & 59,16 \\
+			\bottomrule
+		\end{tabular}
+		\caption{Temps moyens de calcul, accélération et efficacité des configurations.}
+	\end{table}
+	
+	\section{Analyse et discussion}
+	
+	Les résultats montrent que toutes les configurations parallèles testées
+	réduisent le temps de calcul par rapport à la version séquentielle.
+	L'accélération observée varie approximativement de 2,4 à 3,5 selon la
+	taille des matrices et la configuration.
+	
+	OpenMP obtient la meilleure accélération pour les matrices de tailles
+	500 et 2000. La configuration hybride avec un processus MPI et quatre
+	threads OpenMP est la plus rapide pour les tailles 1000 et 1500.
+	
+	Les configurations reposant sur quatre processus MPI sont généralement
+	moins performantes que celles utilisant quatre threads OpenMP. Les coûts
+	de communication et de gestion des processus peuvent contribuer à cet
+	écart, sans que ces mesures permettent d'isoler précisément chaque cause.
+	
+	Il faut également tenir compte du matériel : la machine possède deux
+	cœurs physiques pour quatre processeurs logiques. Quatre travailleurs
+	configurés ne correspondent donc pas nécessairement à quatre cœurs
+	physiques indépendants. L'efficacité calculée est un indicateur théorique
+	rapporté au nombre de travailleurs configurés, et non une mesure directe
+	de l'utilisation du processeur.
+	
+	Enfin, le temps de calcul doit être distingué du temps total. Le temps
+	total inclut des étapes supplémentaires du programme ; les deux mesures
+	ne doivent donc pas être interprétées comme équivalentes.
+	
+	\section{Conclusion}
+	
+	Cette étude montre que la parallélisation améliore nettement les
+	performances de la multiplication matricielle sur la machine utilisée.
+	OpenMP et la configuration hybride avec un processus MPI et quatre
+	threads OpenMP donnent les meilleurs résultats parmi les configurations
+	testées, selon la taille des matrices.
+	
+	Les résultats dépendent toutefois du matériel, de l'implémentation et
+	des coûts associés au parallélisme. Une comparaison sur d'autres
+	architectures permettrait de mieux généraliser ces observations.
+	
+\end{document}

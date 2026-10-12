@@ -1,0 +1,409 @@
+Mesures de multiplication matricielle
+N=1500 ; repetitions=5
+Date : Sat Oct 10 14:32:43 GMT 2026
+
+=== Version : seq ===
+--- Essai 1 ---
+============================================================
+       MULTIPLICATION MATRICIELLE SEQUENTIELLE             
+              VERSION AVEC TRANSPOSEE                       
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Temps de calcul      : 4.543156 secondes
+  Temps total          : 4.716900 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 2 ---
+============================================================
+       MULTIPLICATION MATRICIELLE SEQUENTIELLE             
+              VERSION AVEC TRANSPOSEE                       
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Temps de calcul      : 4.633656 secondes
+  Temps total          : 4.748302 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 3 ---
+============================================================
+       MULTIPLICATION MATRICIELLE SEQUENTIELLE             
+              VERSION AVEC TRANSPOSEE                       
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Temps de calcul      : 4.693229 secondes
+  Temps total          : 4.801962 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 4 ---
+============================================================
+       MULTIPLICATION MATRICIELLE SEQUENTIELLE             
+              VERSION AVEC TRANSPOSEE                       
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Temps de calcul      : 4.668149 secondes
+  Temps total          : 4.775304 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 5 ---
+============================================================
+       MULTIPLICATION MATRICIELLE SEQUENTIELLE             
+              VERSION AVEC TRANSPOSEE                       
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Temps de calcul      : 5.079581 secondes
+  Temps total          : 5.196972 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+=== Version : omp ===
+--- Essai 1 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                       OPENMP                               
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Threads utilises     : 4
+  Temps de calcul      : 1.750007 secondes
+  Temps total          : 1.873686 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 2 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                       OPENMP                               
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Threads utilises     : 4
+  Temps de calcul      : 1.639480 secondes
+  Temps total          : 1.767340 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 3 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                       OPENMP                               
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Threads utilises     : 4
+  Temps de calcul      : 1.558628 secondes
+  Temps total          : 1.679851 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 4 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                       OPENMP                               
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Threads utilises     : 4
+  Temps de calcul      : 1.560552 secondes
+  Temps total          : 1.672901 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 5 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                       OPENMP                               
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Threads utilises     : 4
+  Temps de calcul      : 1.570315 secondes
+  Temps total          : 1.685047 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+=== Version : mpi ===
+--- Essai 1 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                         MPI                                 
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Temps de calcul      : 1.931567 secondes
+  Temps total          : 2.137396 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 2 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                         MPI                                 
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Temps de calcul      : 1.901180 secondes
+  Temps total          : 2.108987 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 3 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                         MPI                                 
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Temps de calcul      : 1.877565 secondes
+  Temps total          : 2.075787 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 4 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                         MPI                                 
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Temps de calcul      : 1.903620 secondes
+  Temps total          : 2.086503 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 5 ---
+============================================================
+             MULTIPLICATION MATRICIELLE                    
+                         MPI                                 
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Temps de calcul      : 1.953323 secondes
+  Temps total          : 2.134519 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+=== Version : hybride_1x4 ===
+--- Essai 1 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 1
+  Threads par processus: 4
+  Temps de calcul      : 1.607362 secondes
+  Temps total          : 1.781813 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 2 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 1
+  Threads par processus: 4
+  Temps de calcul      : 1.526539 secondes
+  Temps total          : 1.671907 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 3 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 1
+  Threads par processus: 4
+  Temps de calcul      : 1.660527 secondes
+  Temps total          : 1.827804 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 4 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 1
+  Threads par processus: 4
+  Temps de calcul      : 1.618501 secondes
+  Temps total          : 1.803596 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 5 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 1
+  Threads par processus: 4
+  Temps de calcul      : 1.612852 secondes
+  Temps total          : 1.739320 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+=== Version : hybride_4x1 ===
+--- Essai 1 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Threads par processus: 1
+  Temps de calcul      : 1.917921 secondes
+  Temps total          : 2.103335 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 2 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Threads par processus: 1
+  Temps de calcul      : 1.904221 secondes
+  Temps total          : 2.109119 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 3 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Threads par processus: 1
+  Temps de calcul      : 1.874805 secondes
+  Temps total          : 2.058861 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 4 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Threads par processus: 1
+  Temps de calcul      : 2.034416 secondes
+  Temps total          : 2.320419 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
+--- Essai 5 ---
+============================================================
+             MULTIPLICATION MATRICIELLE
+                      MPI + OpenMP
+============================================================
+  Taille de la matrice : 1500 x 1500
+  Nombre de processus  : 4
+  Threads par processus: 1
+  Temps de calcul      : 1.917937 secondes
+  Temps total          : 2.126148 secondes
+  Somme de controle    : 843818479.5862830877
+------------------------------------------------------------
+  Optimisation         : transposition de B
+  Parallelisation      : MPI + OpenMP
+  Statut               : EXECUTION TERMINEE
+============================================================
+
